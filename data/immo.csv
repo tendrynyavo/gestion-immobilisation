@@ -1,0 +1,5 @@
+id_immobilisation;nom;id_categorie
+IM001;Voiture;CAT001
+IM002;Ordinateur;CAT002
+IM003;Imprimante;CAT002
+IM004;Papier imprimante;CAT002

@@ -1,0 +1,88 @@
+.active-item {
+    background-color: #93c944;
+    height: 60px;
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item {
+    background-color: #ffff;
+    height: 60px;
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item:hover {
+    background-color: #f5f2ec;
+}
+
+.rounded-sidebar {
+    border-radius: 45px;
+}
+
+.rounded-container {
+    border-radius: 30px;
+}
+
+.rounded-container-detail {
+    border-radius: 30px;
+    background: rgb(53,63,55);
+    background: linear-gradient(90deg, rgba(53,63,55,1) 0%, rgba(51,72,55,1) 23%, rgba(60,103,66,1) 100%);
+}
+
+.form-control:focus {
+    border-color: #f5f2ec;
+    box-shadow: 0 0 0 0.25rem #6565651c;
+}
+
+.form-control {
+    border: 1px solid black;
+}
+
+.form-select {
+    border: 1px solid black;
+}
+
+.form-select:focus {
+    border-color: #f5f2ec;
+    box-shadow: 0 0 0 0.25rem #6565651c;
+}
+
+/* .btn {
+    background-color: #93c944;
+    border-color: #93c944;
+    color: white;
+    border-radius: 10px;
+}
+
+.btn:hover {
+    color: white;
+}
+
+.btn:focus {
+    border-color: #9ec759;
+    box-shadow: 0 0 0 0.25rem f5f2ec;
+} */
+
+.description {
+    height: 172px;
+    overflow-y: auto;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.description::-webkit-scrollbar {
+    display: none;
+}
+
+.header {
+    border-width: 1.4px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 20px;
+    height: 725px;
+    position: sticky;
+}

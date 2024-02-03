@@ -1,0 +1,65 @@
+id_composant;nom;mere;id_immobilisation
+C001;Moteur;;IM001
+C002;Changement huile moteur;C001;IM001
+C003;Système de refroidissement;C001;IM001
+C004;Courroie de distribution;C001;IM001
+C005;Bougies allumage;C001;IM001
+C006;Freins;;IM001
+C007;Plaquettes de frein;C006;IM001
+C008;Disques de frein;C006;IM001
+C009;Liquide de frein;C006;IM001
+C010;Pneus;;IM001
+C011;Rotation des pneus;C010;IM001
+C012;Équilibrage des pneus;C010;IM001
+C013;Alignement;C010;IM001
+C014;Batterie;;IM001
+C015;Bornes de la batterie;C014;IM001
+C016;Niveau électrolyte;C014;IM001
+C017;Système échappement;;IM001
+C018;Catalyseur;C017;IM001
+C019;Silencieux;C017;IM001
+C020;Sondes oxygène;C017;IM001
+C021;Suspension;;IM001
+C022;Amortisseurs et ressorts;C021;IM001
+C023;Joints de suspension;C021;IM001
+C024;Transmission;;IM001
+C025;Liquide de transmission;C024;IM001
+C026;Filtre de transmission;C024;IM001
+C027;Éclairage;;IM001
+C028;Ampoules;C027;IM001
+C029;Phares;C027;IM001
+C030;Système exploitation;;IM002
+C031;Mises à jour;C030;IM002
+C032;Maintenance des correctifs de sécurité;C030;IM002
+C033;Logiciels et pilotes;;IM002
+C034;Mises à jour;C033;IM002
+C035;Sauvegarde;;IM002
+C036;Configuration;C035;IM002
+C037;Vérification;C035;IM002
+C038;Système de refroidissement;;IM002
+C039;Ventilateurs;C003;IM002
+C040;Températures du processeur;C003;IM002
+C041;Anti-virus et sécurité;;IM002
+C042;Mises à jour;C041;IM002
+C043;Analyse;C041;IM002
+C044;Têtes impression;;IM003
+C045;Nettoyage;C044;IM003
+C046;Alignement;C044;IM003
+C047;Bac à papier;;IM003
+C048;Nettoyage;C047;IM003
+C049;Ajustement;C047;IM003
+C050;Rouleaux alimentation;;IM003
+C051;Nettoyage;C050;IM003
+C052;Remplacement;C050;IM003
+C053;Cartouches encre/toner;;IM003
+C054;Remplacement;C053;IM003
+C055;Niveaux encre;C053;IM003
+C056;Stockage;;IM004
+C057;Environnement;C056;IM004
+C058;Protection;C056;IM004
+C059;Manipulation;;IM004
+C060;Soins;C059;IM004
+C061;Lumière;C059;IM004
+C062;Compatibilité;;IM004
+C063;Utilisation;C062;IM004
+C064;Vérification;C062;IM004

@@ -1,0 +1,64 @@
+Moteur,,Voiture
+Changement huile moteur,Moteur,Voiture
+Système de refroidissement,Moteur,Voiture
+Courroie de distribution,Moteur,Voiture
+Bougies allumage,Moteur,Voiture
+Freins,,Voiture
+Plaquettes de frein,Freins,Voiture
+Disques de frein,Freins,Voiture
+Liquide de frein,Freins,Voiture
+Pneus,,Voiture
+Rotation des pneus,Pneus,Voiture
+Équilibrage des pneus,Pneus,Voiture
+Alignement,Pneus,Voiture
+Batterie,,Voiture
+Bornes de la batterie,Batterie,Voiture
+Niveau électrolyte,Batterie,Voiture
+Système échappement,,Voiture
+Catalyseur,Système échappement,Voiture
+Silencieux,Système échappement,Voiture
+Sondes oxygène,Système échappement,Voiture
+Suspension,,Voiture
+Amortisseurs et ressorts,Suspension,Voiture
+Joints de suspension,Suspension,Voiture
+Transmission,,Voiture
+Liquide de transmission,Transmission,Voiture
+Filtre de transmission,Transmission,Voiture
+Éclairage,,Voiture
+Ampoules,Éclairage,Voiture
+Phares,Éclairage,Voiture
+Système exploitation,,Ordinateur
+Mises à jour,Système exploitation,Ordinateur
+Maintenance des correctifs de sécurité,Système exploitation,Ordinateur
+Logiciels et pilotes,,Ordinateur
+Mises à jour,Logiciels et pilotes,Ordinateur
+Sauvegarde,,Ordinateur
+Configuration,Sauvegarde,Ordinateur
+Vérification,Sauvegarde,Ordinateur
+Système de refroidissement,,Ordinateur
+Ventilateurs,Système de refroidissement,Ordinateur
+Températures du processeur,Système de refroidissement,Ordinateur
+Anti-virus et sécurité,,Ordinateur
+Mises à jour,Anti-virus et sécurité,Ordinateur
+Analyse,Anti-virus et sécurité,Ordinateur
+Têtes impression,,Imprimante
+Nettoyage,Têtes impression,Imprimante
+Alignement,Têtes impression,Imprimante
+Bac à papier,,Imprimante
+Nettoyage,Bac à papier,Imprimante
+Ajustement,Bac à papier,Imprimante
+Rouleaux alimentation,,Imprimante
+Nettoyage,Rouleaux alimentation,Imprimante
+Remplacement,Rouleaux alimentation,Imprimante
+Cartouches encre/toner,,Imprimante
+Remplacement,Cartouches encre/toner,Imprimante
+Niveaux encre,Cartouches encre/toner,Imprimante
+Stockage,,Papier imprimante
+Environnement,Stockage,Papier imprimante
+Protection,Stockage,Papier imprimante
+Manipulation,,Papier imprimante
+Soins,Manipulation,Papier imprimante
+Lumière,Manipulation,Papier imprimante
+Compatibilité,,Papier imprimante
+Utilisation,Compatibilité,Papier imprimante
+Vérification,Compatibilité,Papier imprimante

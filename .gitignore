@@ -1,0 +1,5 @@
+*.class
+# compile.bat
+target
+config.xml
+node_module

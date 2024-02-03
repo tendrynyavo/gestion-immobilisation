@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/header.css">
+    <link rel="stylesheet" href="../assets/css/reception.css">
+    <title>Dashboard</title>
+    <style>
+        .sticky-offset {
+            top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row" style="background-color: #f5f2ec;">
+            
+            
+            <div class="col-sm-auto sticky-top mt-3 header m-3 sticky-offset" style="background-color: #ffffff;">
+                <div class="d-flex flex-sm-column rounded-sidebar flex-row flex-nowrap align-items-center sticky-top sticky-offset" style="background-color: #ffffff;">
+                    <ul class="p-2 nav nav-flush flex-sm-column flex-row flex-nowrap mb-auto mx-auto text-center align-items-center">
+                        <li class="nav-item mt-3">
+                            <a href="../Format.jsp" class="link-dark nav-link rounded-circle item">
+                                <i style="color: rgb(0, 0, 0);" class="bi-box-seam fs-4"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item mt-3">
+                            <a href="../Product.jsp" class="link-dark nav-link rounded-circle item">
+                                <i style="color: rgb(0, 0, 0);" class="bi-view-list fs-4"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item mt-3">
+                            <a href="../Matiere.jsp" class="link-dark nav-link rounded-circle item">
+                                <i style="color: rgb(0, 0, 0);" class="bi-basket fs-4"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item mt-3">
+                            <a href="../Quantite.jsp" class="link-dark nav-link rounded-circle item">
+                                <i style="color: rgb(0, 0, 0);" class="bi-receipt fs-4"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item mt-3">
+                            <a href="/commercial/log-out.do" class="link-dark nav-link rounded-circle item">
+                                <i style="color: rgb(0, 0, 0);" class="bi-box-arrow-left fs-4"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="col mt-4 mx-4 min-vh-100">
+                <div class="row">
+                    <div class="col">
+
+
+                        <form class="p-5 w-50 bg-white detail" action="/gestion-stock/controller/entree/entree.jsp" method="POST">
+                            <h2 class="text-center mb-4">Procés verbale de reception</h2>
+                            <div class="mb-3">
+                                <label for="date" class="form-label">Designation</label>
+                                <input type="text" class="form-control" name="designation">
+                            </div>
+                            <div class="mb-3">
+                                <label for="magasin" class="form-label">Marque</label>
+                                <select class="form-select" name="adresse">
+                                    <option value="1">Toyota</option>
+                                    <option value="2">Mercedes Benz</option>
+                                    <option value="60">Ford</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-outline-dark px-5 mt-3">Valider</button>
+                        </form>
+                    
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

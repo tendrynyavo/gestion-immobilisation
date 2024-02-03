@@ -1,0 +1,33 @@
+id_caracteristique;nom;id_immobilisation
+CAR00001;Année de fabrication;IM001
+CAR00002;Type de carburant;IM001
+CAR00003;Puissance du moteur (en chevaux);IM001
+CAR00004;Transmission (automatique, manuelle);IM001
+CAR00005;Nombre de places;IM001
+CAR00006;Couleur;IM001
+CAR00007;Kilométrage;IM001
+CAR00008;Options supplémentaires (GPS, climatisation, etc.);IM001
+CAR00009;Processeur;IM002
+CAR00010;Mémoire RAM;IM002
+CAR00011;Capacité de stockage (disque dur ou SSD);IM002
+CAR00012;Carte graphique;IM002
+CAR00013;Système d'exploitation;IM002
+CAR00014;Taille de l'écran;IM002
+CAR00015;Type d'écran (LCD, LED, etc.);IM002
+CAR00016;Connectivité (ports USB, HDMI, etc.);IM002
+CAR00017;Type d'impression (jet d'encre, laser, etc.);IM003
+CAR00018;Résolution d'impression;IM003
+CAR00019;Vitesse d'impression;IM003
+CAR00020;Fonctions (impression, numérisation, copie);IM003
+CAR00021;Connectivité (USB, Wi-Fi, Bluetooth);IM003
+CAR00022;Taille maximale du papier pris en charge;IM003
+CAR00023;Capacité du bac à papier;IM003
+CAR00024;Compatibilité avec les systèmes d'exploitation;IM003
+CAR00025;Type de papier (standard, photo, papier cartonné, etc.);IM004
+CAR00026;Format du papier (A4, lettre, légal, etc.);IM004
+CAR00027;Poids du papier;IM004
+CAR00028;Finition du papier (brillant, mat, etc.);IM004
+CAR00029;Compatibilité avec les imprimantes (jet d'encre, laser);IM004
+CAR00030;Quantité par paquet;IM004
+CAR00031;Marque de certification (le cas échéant);IM004
+CAR00032;Écologie (recyclable, certifié FSC, etc.);IM004

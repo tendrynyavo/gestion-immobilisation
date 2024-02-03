@@ -1,0 +1,13 @@
+.detail {
+    border-width: 1.4px;
+    border-radius: 20px;
+    border-style: solid;
+    border-color: black;
+}
+
+img {
+    border-radius: 20px;
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
