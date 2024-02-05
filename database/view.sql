@@ -118,3 +118,6 @@ JOIN composant c ON n.id_composant = c.ID_COMPOSANT
 LEFT JOIN COMPOSANT co ON co.ID_COMPOSANT  = c.Mere
 WHERE niveau = 1
 ORDER BY mere_id_composant, ID_COMPOSANT;
+
+SELECT debut - fin
+FROM v_mission;

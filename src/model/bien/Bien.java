@@ -9,6 +9,7 @@ import model.caracteristique.Caracteristique;
 import model.composant.Composant;
 import model.inventaire.Inventaire;
 import model.marque.Marque;
+import model.mission.Mission;
 import model.reception.Reception;
 
 public class Bien extends Reception {
@@ -147,7 +148,7 @@ public class Bien extends Reception {
         bien.ajouter(values, connection);
     }
 
-    public Composant[] getComposants(String mere, Connection connection) throws Exception {
+    public Composant[] getEtatActuelleComposants(String mere, Connection connection) throws Exception {
         Composant composant = new Composant();
         String sql ="SELECT *\r\n" +
                     "FROM V_COMPOSANT_ETAT_HIERARCHIE\r\n" +
@@ -233,6 +234,34 @@ public class Bien extends Reception {
         Bien bien = new Bien();
         bien.setCode(idBien);
         return bien.faireInventaire(date, connection);
+    }
+
+    public Mission[] getMissions(String etat, Connection connection) throws Exception {
+        Mission mission = new Mission();
+        mission.setBien(this);
+        mission.setEtat(etat);
+        return (Mission[]) mission.findAll(connection, "debut DESC");
+    }
+
+    public Mission[] getMissionsEnCours(Connection connection) throws Exception {
+        Mission mission = new Mission();
+        mission.setTable("v_mission_en_cours");
+        mission.setBien(this);
+        return (Mission[]) mission.findAll(connection, "debut DESC");
+    }
+
+    public Inventaire getLastInventaire(Connection connection) throws Exception {
+        Inventaire inventaire = new Inventaire();
+        inventaire.setBien(this);
+        return ((Inventaire[]) inventaire.findAll(connection, null))[0];
+    }
+
+    public Composant[] getEtatActuelleComposantsFille(Connection connection) throws Exception {
+        Composant composant = new Composant();
+        String sql ="SELECT *\r\n" +
+                    "FROM V_COMPOSANT_ETAT_HIERARCHIE\r\n" +
+                    "WHERE code = '%s' AND nombre = 1 ORDER BY nom, id_composant";
+        return (Composant[]) composant.getData(String.format(sql, this.getCode()), connection);
     }
 
 }

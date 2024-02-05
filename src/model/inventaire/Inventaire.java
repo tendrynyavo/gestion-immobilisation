@@ -1,19 +1,31 @@
 package model.inventaire;
 
 import java.sql.Connection;
-import java.sql.Date;
+import java.sql.Timestamp;
+import java.text.ParseException;
 import connection.BddObject;
 import connection.Column;
 import connection.annotation.ColumnName;
 import model.bien.Bien;
 import model.composant.Composant;
+import model.mission.Mission;
 
 public class Inventaire extends BddObject {
 
     Bien bien;
     @ColumnName("date_inventaire")
-    Date date;
+    Timestamp date;
     Composant[] composants;
+
+    public Timestamp getDate() {
+        return date;
+    }
+
+    public void setDate(Timestamp date) {
+        if (date.after(new Timestamp(System.currentTimeMillis())))
+            throw new IllegalArgumentException("Inventaire avec date invalide");
+        this.date = date;
+    }
 
     public Bien getBien() {
         return bien;
@@ -23,18 +35,8 @@ public class Inventaire extends BddObject {
         this.bien = bien;
     }
 
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
-    public void setDate(String date) {
-        if (date.isEmpty())
-            throw new IllegalArgumentException("Date est vide");
-        this.setDate(Date.valueOf(date));
+    public void setDate(String date) throws IllegalArgumentException, ParseException {
+        this.setDate(Mission.toDate(date));
     }
 
     public Composant[] getComposants() {
@@ -75,8 +77,7 @@ public class Inventaire extends BddObject {
         return this.getComposants()[value];
     }
 
-    @Override
-    public void insert(Connection connection, Column... args) throws Exception {
+    public void insertInventaire(Connection connection, Column... args) throws Exception {
         boolean connect = false;
         try {
             if (connection == null) {
@@ -107,13 +108,43 @@ public class Inventaire extends BddObject {
     }
 
     public void ajouterComposant(Composant composant, Connection connection) throws Exception {
-        composant.setTable("etat_composant");
-        composant.setSerial(false);
-        composant.setCapacite(null);
-        composant.setNom(null);
-        composant.setUnite(null);
-        composant.setBien(null);
-        composant.insert(connection, new Column("id_inventaire", this.getId()));
+        Composant c = new Composant();
+        c.setTable("etat_composant");
+        c.setSerial(false);
+        c.setId(composant.getId());
+        c.setEtat(composant.getEtat());
+        c.insert(connection, new Column("id_inventaire", this.getId()));
+    }
+
+    public void confirmer(Connection connection) throws Exception {
+        boolean connect = false;
+        try {
+            if (connection == null) {
+                connection = this.getConnection();
+                connect = true;
+            }
+            
+            Composant[] composants = this.getComposants();
+            this.setComposants(null);
+            this.insert(connection);
+
+            for (Composant composant : composants) {
+                this.ajouterComposant(composant, connection);
+            }
+
+            if (connect) {
+                connection.commit();
+            }
+        } catch (Exception e) {
+            if (connection != null && connect) {
+                connection.rollback();
+            }
+            throw e;
+        } finally {
+            if (connection != null && connect) {
+                connection.close();
+            }
+        }
     }
     
 }

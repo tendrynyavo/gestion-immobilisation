@@ -1,3 +1,4 @@
+<%@page contentType="text/html; charset=UTF-8" %>
 <%@page import="model.bien.Bien" %>
 <%@page import="model.caracteristique.Caracteristique" %>
 <%@page import="model.bien.Dashboard" %>
@@ -83,8 +84,9 @@
                                 <th>Etat</th>
                                 <th>Progression</th>
                                 <th>Etat (%)</th>
-                                <th>Detail</th>
-                                <th>Entretenir</th>
+                                <th>Last inventaire</th>
+                                <th></th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -95,10 +97,11 @@
                                 <td class="align-center-middle text-center"><%=componsant.getReste() %></td>
                                 <td class="align-center-middle"><%=componsant.getComportement() %></td>
                                 <td class="align-center-middle"><progress class="<%=componsant.getColor() %>" value="<%=componsant.getPourcentage() %>" max="100"></progress></td>
-                                <td class="align-center-middle"><%=componsant.getPourcentageFormat() %> %</td>
+                                <td class="align-center-middle"><%=componsant.getPourcentageFormat() %>%</td>
+                                <td class="align-center-middle"><%=componsant.getLastInventaireString() %></td>
                                 <td class="align-center-middle">
                                 <% if (!componsant.isFille()) { %>
-                                <a href="/immobilisation/dashboard.jsp?bien=<%=bien.getCode() %>&mere=<%=componsant.getId() %>"><i style="color: rgb(0, 0, 0);" class="bi-arrow-90deg-right fs-4"></i></a>
+                                <a href="/immobilisation/dashboard-composant.jsp?bien=<%=bien.getCode() %>&mere=<%=componsant.getId() %>"><i style="color: rgb(0, 0, 0);" class="bi-arrow-90deg-right fs-4"></i></a>
                                 <% } %>
                                 </td>
                                 <td class="align-center-middle"><i style="color: rgb(0, 0, 0);" class="bi-bag-plus fs-4"></i></td>

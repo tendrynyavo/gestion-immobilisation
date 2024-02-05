@@ -81,25 +81,35 @@ CREATE TABLE inventaire(
 );
 
 CREATE TABLE mission(
-   id_employee VARCHAR2(50) ,
-   code VARCHAR2(50) ,
    id_mission VARCHAR2(50) ,
    latitude BINARY_DOUBLE,
    longitude BINARY_DOUBLE,
    debut TIMESTAMP,
-   fin TIMESTAMP,
-   PRIMARY KEY(id_employee, code, id_mission),
-   FOREIGN KEY(id_employee) REFERENCES employee(id_employee),
-   FOREIGN KEY(code) REFERENCES bien(code)
+   adresse VARCHAR2(100) ,
+   etat NUMBER(10) NOT NULL,
+   code VARCHAR2(50)  NOT NULL,
+   id_employee VARCHAR2(50)  NOT NULL,
+   PRIMARY KEY(id_mission),
+   FOREIGN KEY(code) REFERENCES bien(code),
+   FOREIGN KEY(id_employee) REFERENCES employee(id_employee)
 );
 
 CREATE TABLE fin_mission(
-   id_fin_mission VARCHAR2(50),
+   id_fin_mission VARCHAR2(50) ,
    fin TIMESTAMP,
    id_inventaire VARCHAR2(50)  NOT NULL,
    id_mission VARCHAR2(50)  NOT NULL,
    PRIMARY KEY(id_fin_mission),
    FOREIGN KEY(id_inventaire) REFERENCES inventaire(id_inventaire),
+   FOREIGN KEY(id_mission) REFERENCES mission(id_mission)
+);
+
+CREATE TABLE valide_mission(
+   id_validation VARCHAR2(50) ,
+   date_validation TIMESTAMP,
+   id_mission VARCHAR2(50)  NOT NULL,
+   PRIMARY KEY(id_validation),
+   FOREIGN KEY(id_mission) REFERENCES mission(id_mission)
 );
 
 CREATE TABLE reception(
@@ -131,4 +141,18 @@ CREATE TABLE etat_composant(
    PRIMARY KEY(id_composant, id_inventaire),
    FOREIGN KEY(id_composant) REFERENCES composant(id_composant),
    FOREIGN KEY(id_inventaire) REFERENCES inventaire(id_inventaire)
+);
+
+CREATE TABLE etat_inventaire(
+   id_composant VARCHAR2(50) ,
+   id_validation VARCHAR2(50) ,
+   etat BINARY_DOUBLE,
+   PRIMARY KEY(id_composant, id_validation),
+   FOREIGN KEY(id_composant) REFERENCES composant(id_composant),
+   FOREIGN KEY(id_validation) REFERENCES valide_mission(id_validation)
+);
+
+CREATE TABLE sample (
+   x DOUBLE PRECISION,
+   y DOUBLE PRECISION
 );

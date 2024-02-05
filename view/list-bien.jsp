@@ -1,3 +1,4 @@
+<%@page contentType="text/html; charset=UTF-8" %>
 <%@page import="model.bien.Bien" %>
 <%@page import="model.immobilisation.Immobilisation" %>
 <%
@@ -75,7 +76,8 @@
                                 <th>Etat</th>
                                 <th>Progression</th>
                                 <th>Alerte</th>
-                                <th>Detail</th>
+                                <th></th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -89,7 +91,10 @@
                                 <td class="align-center-middle"><progress class="<%=bien.getColor() %>" value="<%=bien.getPourcentage() %>" max="100"></progress></td>
                                 <td class="align-center-middle"><%=bien.getAlerte() %></td>
                                 <td class="align-center-middle">
-                                    <a href="/immobilisation/dashboard.jsp?bien=<%=bien.getCode() %>"><i style="color: rgb(0, 0, 0);" class="bi-arrow-90deg-right fs-4"></i></a>
+                                    <a href="/immobilisation/dashboard-composant.jsp?bien=<%=bien.getCode() %>"><i style="color: rgb(0, 0, 0);" class="bi-arrow-90deg-right fs-4"></i></a>
+                                </td>
+                                <td class="align-center-middle">
+                                    <a href="/immobilisation/dashboard-mission.jsp?bien=<%=bien.getCode() %>"><i style="color: rgb(0, 0, 0);" class="bi-arrow-90deg-right fs-4"></i></a>
                                 </td>
                             </tr>
                             <% } %>

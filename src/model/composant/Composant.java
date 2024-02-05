@@ -1,5 +1,7 @@
 package model.composant;
 
+import java.sql.Timestamp;
+import connection.annotation.ColumnName;
 import model.bien.Bien;
 import model.etat.Progression;
 
@@ -10,7 +12,21 @@ public class Composant extends Progression {
     Double capacite;
     String unite;
     Bien bien;
+    @ColumnName("date_inventaire")
+    Timestamp lastInventaire;
     Composant[] composants;
+
+    public Timestamp getLastInventaire() {
+        return lastInventaire;
+    }
+
+    public String getLastInventaireString() {
+        return (this.getLastInventaire() == null) ? "-" : this.getLastInventaire().toString();
+    }
+
+    public void setLastInventaire(Timestamp lastInventaire) {
+        this.lastInventaire = lastInventaire;
+    }
 
     public Double getCapacite() {
         return capacite;

@@ -1,9 +1,10 @@
-<%@page contentType="text/html; charset=UTF-8" %>
-<%@page import="model.bien.Bien" %>
-<%@page import="model.caracteristique.Caracteristique" %>
+<%@page import="model.composant.Composant" %>
+<%@page import="model.inventaire.Inventaire" %>
 <%
     
-    Bien bien = new Bien().detail(request.getParameter("bien"), false, null);
+    Inventaire inventaire = (Inventaire) session.getAttribute("bilan");
+    int index = Integer.parseInt(request.getParameter("i"));
+    Composant composant = inventaire.getComposants()[index];
 
 %>
 <!DOCTYPE html>
@@ -37,14 +38,14 @@
                     <div class="col">
 
 
-                        <form class="p-5 w-50 bg-white detail" action="/immobilisation/controller/detail/detail.jsp" method="POST">
-                            <h2 class="text-center mb-4">Detail du bien <%=bien.getNom() %></h2>
-                            <% for (Caracteristique caracteristique : bien.getCaracteristiques()) { %>
+                        <form class="p-5 w-50 bg-white detail" action="/immobilisation/controller/bilan/update.jsp" method="GET">
+                            <h2 class="text-center mb-4">Modification</h2>
                             <div class="mb-3">
-                                <label for="date" class="form-label"><%=caracteristique.getNom() %></label>
-                                <input type="text" class="form-control" name="caracteristiques">
+                                <label for="date" class="form-label">Valeur</label>
+                                <input type="text" class="form-control" name="valeur" value="<%=composant.getEtatReel() %>">
                             </div>
-                            <% } %>
+                            <input type="hidden" name="i" value="<%=index %>">
+                            <input type="hidden" name="mission" value="<%=request.getParameter("mission") %>">
                             <button type="submit" class="btn btn-outline-dark px-5 mt-3">Valider</button>
                         </form>
                     

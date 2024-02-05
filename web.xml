@@ -12,6 +12,15 @@
         <url-pattern>/insert</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>mission</servlet-name>
+        <servlet-class>servlet.MissionServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>mission</servlet-name>
+        <url-pattern>/mission</url-pattern>
+    </servlet-mapping>
+
     <jsp-config>
     <jsp-property-group>
         <url-pattern>*.jsp</url-pattern>
