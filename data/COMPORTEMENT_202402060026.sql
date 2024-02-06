@@ -1,0 +1,4 @@
+INSERT INTO IMMOBILISATION.COMPORTEMENT (ID_ETAT,DESIGNATION,DEBUT,FIN,COLOR) VALUES
+	 ('COMP001','Bonne etat',7,10,'green'),
+	 ('COMP002','Utilisable',3,6.9999999,'yellow'),
+	 ('COMP003','Inutilisable',0,2.99999999,'red');
