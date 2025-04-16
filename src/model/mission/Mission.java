@@ -12,12 +12,11 @@ import model.bien.Bien;
 import model.composant.Composant;
 import model.employee.Employee;
 import model.inventaire.Inventaire;
+import model.map.GeoMap;
 
-public class Mission extends BddObject {
+public class Mission extends GeoMap {
 
     Employee employee;
-    Double longitude;
-    Double latitude;
     Bien bien;
     String adresse;
     Inventaire actuelle;
@@ -56,22 +55,6 @@ public class Mission extends BddObject {
 
     public void setEmployee(Employee employee) {
         this.employee = employee;
-    }
-
-    public Double getLongitude() {
-        return longitude;
-    }
-
-    public void setLongitude(Double longitude) {
-        this.longitude = longitude;
-    }
-
-    public Double getLatitude() {
-        return latitude;
-    }
-
-    public void setLatitude(Double latitude) {
-        this.latitude = latitude;
     }
 
     public Bien getBien() {
